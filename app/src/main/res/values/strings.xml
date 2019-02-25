@@ -10,4 +10,7 @@
     <string name="history">История</string>
     <string name="app_name_rus">Определитель языка</string>
     <string name="menu">Меню</string>
+    <string name="check_language">Определить язык</string>
+    <string name="write_text">Введите текст</string>
+    <string name="hello_text">Добро пожаловать в приложение для определения языка текста \nДля проверки текста откройте меню и перейдите на окно \"Новый текст\"</string>
 </resources>
