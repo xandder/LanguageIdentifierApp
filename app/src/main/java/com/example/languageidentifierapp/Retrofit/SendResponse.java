@@ -1,20 +1,21 @@
 package com.example.languageidentifierapp.Retrofit;
 
+import com.example.languageidentifierapp.Models.Language.Language;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class SendResponse {
     @SerializedName("languages")
     @Expose
-    private ArrayList<String> languages = null;
+    private List<Language> languages = null;
 
-    public ArrayList<String> getLanguages() {
+    public List<Language> getLanguages() {
         return languages;
     }
 
-    public void setLanguages(ArrayList<String> languages) {
+    public void setLanguages(List<Language> languages) {
         this.languages = languages;
     }
 }
