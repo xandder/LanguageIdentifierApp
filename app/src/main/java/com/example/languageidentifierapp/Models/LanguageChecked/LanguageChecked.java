@@ -1,5 +1,6 @@
 package com.example.languageidentifierapp.Models.LanguageChecked;
 
+//Текст с определенным языком
 public class LanguageChecked {
     private String text; // Проверенный текст
     private String language; // Язык текста

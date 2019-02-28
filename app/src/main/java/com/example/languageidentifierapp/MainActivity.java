@@ -48,12 +48,13 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
         if(fragmentClass == null)
             fragmentClass = HelloFragment.class; // Устанавливаем приветственный фрагмент
         if(title != null) setTitle(title);
-        //Log.d("Test", toolbar.getTitle().toString());
-        loadLanguagesLocal(this);
-        if(allLanguages.isEmpty() || allLanguages == null) {
+
+        loadLanguagesLocal(this); //Пытаемся загрузить все языки с локальной БД
+        if(allLanguages.isEmpty() || allLanguages == null) { //Если не загрузили, то тянем через апи
             GETAllLanguages(this);
         } else Log.d(TAG, allLanguages.toString());
         setFragment();
@@ -112,17 +113,4 @@ public class MainActivity extends AppCompatActivity
         Call<SendResponse> send();
     }
 
-    //Сохраняем все языки в БД, чтоб не тянуть их с сервера каждый раз
-    //public boolean saveLanguagesLocal(List<Language> languagesList){
-    //    LanguagesDbHelper dbHelper = new LanguagesDbHelper(this);
-    //    SQLiteDatabase db = dbHelper.getWritableDatabase();
-    //    for(Language language : languagesList){
-    //        ContentValues cv = new ContentValues();
-    //        cv.put(LanguagesContract.LanguagesEntry.COLUMN_LANGUAGE, language.getLanguage());
-    //        cv.put(LanguagesContract.LanguagesEntry.COLUMN_NAME, language.getName());
-    //        long rowID = db.insert(LanguagesContract.LanguagesEntry.TABLE_NAME, null, cv);
-    //        Log.d(TAG, String.valueOf(rowID));
-    //    }
-    //    return true;
-    //}
 }

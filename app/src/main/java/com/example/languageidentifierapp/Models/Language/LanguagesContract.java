@@ -2,6 +2,7 @@ package com.example.languageidentifierapp.Models.Language;
 
 import android.provider.BaseColumns;
 
+//Контракт для работы с БД
 public final class LanguagesContract {
     private LanguagesContract(){}
 

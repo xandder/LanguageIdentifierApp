@@ -8,6 +8,7 @@ import android.util.Log;
 import com.example.languageidentifierapp.Models.Language.LanguagesContract;
 import com.example.languageidentifierapp.Models.LanguageChecked.LanguageCheckedContract;
 
+//Хелпер для работы с бд
 public class LanguagesDbHelper extends SQLiteOpenHelper {
 
     private static final String TAG = "SpendItemDbHelper";
@@ -21,11 +22,13 @@ public class LanguagesDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        //Создаем таблицу со всеми языками
         String SQL_CREATE_LANGUAGES_TABLE = "CREATE TABLE " + LanguagesContract.LanguagesEntry.TABLE_NAME + " ("
                 + LanguagesContract.LanguagesEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + LanguagesContract.LanguagesEntry.COLUMN_LANGUAGE + " TEXT NOT NULL, "
                 + LanguagesContract.LanguagesEntry.COLUMN_NAME + " TEXT NOT NULL);";
 
+        //Создаем таблицу с проверенными текстами для истории
         String SQL_CREATE_CHECKED_LANGUAGES_TABLE = "CREATE TABLE " + LanguageCheckedContract.LanguageCheckedEntry.TABLE_NAME + " ("
                 + LanguageCheckedContract.LanguageCheckedEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + LanguageCheckedContract.LanguageCheckedEntry.COLUMN_TEXT + " TEXT NOT NULL, "

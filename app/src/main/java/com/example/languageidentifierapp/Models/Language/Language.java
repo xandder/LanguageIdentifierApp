@@ -1,5 +1,6 @@
 package com.example.languageidentifierapp.Models.Language;
 
+//Язык
 public class Language {
     private String language; // короткое название
     private String name; // полное название

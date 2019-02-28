@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+//Для получения списка языков из запроса
 public class SendResponse {
     @SerializedName("languages")
     @Expose

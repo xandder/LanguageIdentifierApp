@@ -13,7 +13,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:src="@drawable/ic_arrow_right" />
 
     <EditText
         android:id="@+id/text_field"
@@ -40,5 +40,13 @@
         android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
         />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:indeterminateOnly="true"
+        android:visibility="invisible"/>
 
 </RelativeLayout>

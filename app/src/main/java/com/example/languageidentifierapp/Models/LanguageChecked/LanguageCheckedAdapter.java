@@ -12,6 +12,7 @@ import com.example.languageidentifierapp.R;
 
 import java.util.ArrayList;
 
+//Адаптер для заполнения списка в истории
 public class LanguageCheckedAdapter extends BaseAdapter {
     Context ctx;
     LayoutInflater layoutInflater;
@@ -41,7 +42,6 @@ public class LanguageCheckedAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        //public ImageView imageView;
         public TextView textTV;
         public TextView languageTV;
         public TextView dateTV;
@@ -54,22 +54,20 @@ public class LanguageCheckedAdapter extends BaseAdapter {
         if (cView == null) {
             cView = layoutInflater.inflate(R.layout.languagelist_item, null, false);
             holder = new ViewHolder();
-            holder.textTV = (TextView) cView.findViewById(R.id.checked_text);
-            holder.languageTV = (TextView) cView.findViewById(R.id.language);
+            holder.textTV = cView.findViewById(R.id.checked_text);
+            holder.languageTV = cView.findViewById(R.id.language);
             holder.dateTV = cView.findViewById(R.id.check_date);
             cView.setTag(holder);
             holder = (ViewHolder) cView.getTag();
         } else {
             holder = (ViewHolder) cView.getTag();
         }
-        //view = layoutInflater.inflate(R.layout.spendlist_item, parent, false);
         LanguageChecked lang = getLanguageItem(position);
 
 
         holder.textTV.setText(lang.getText());
         holder.languageTV.setText(lang.getLanguage());
         holder.dateTV.setText(lang.getDate());
-        /* Добавить картинки по типу расходов*/
 
         return cView;
     }

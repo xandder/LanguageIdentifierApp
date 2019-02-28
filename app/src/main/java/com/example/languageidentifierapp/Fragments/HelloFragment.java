@@ -10,8 +10,8 @@ import com.example.languageidentifierapp.R;
 
 public class HelloFragment extends Fragment {
 
+    //Пустой фрагмент с приветствием
     @Override
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.content_main, container, false);

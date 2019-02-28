@@ -21,16 +21,18 @@ public class HistoryFragment extends Fragment {
     ListView languageCheckedList;
     LanguageCheckedAdapter adapter;
 
+    //Фрагмент с историей
     @Override
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_history, container, false);
 
-        languageCheckedArray = loadCheckedLanguageLocal(this.getActivity());
-        adapter = new LanguageCheckedAdapter(this.getContext(), languageCheckedArray);
-        languageCheckedList = view.findViewById(R.id.checked_list);
-        languageCheckedList.setAdapter(adapter);
+        languageCheckedArray = loadCheckedLanguageLocal(this.getActivity()); //Грузим историю
+        if (!languageCheckedArray.isEmpty()) {
+            adapter = new LanguageCheckedAdapter(this.getContext(), languageCheckedArray);
+            languageCheckedList = view.findViewById(R.id.checked_list);
+            languageCheckedList.setAdapter(adapter);
+        }
         return view;
     }
 }

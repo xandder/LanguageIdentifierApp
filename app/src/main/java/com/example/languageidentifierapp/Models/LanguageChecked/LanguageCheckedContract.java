@@ -2,6 +2,7 @@ package com.example.languageidentifierapp.Models.LanguageChecked;
 
 import android.provider.BaseColumns;
 
+//Контракт для работы с БД
 public class LanguageCheckedContract {
     private LanguageCheckedContract(){}
 
